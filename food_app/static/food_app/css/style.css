@@ -8361,3 +8361,20 @@ h1, h2, h3, h4, h5,
     border-color: #000; }
 
 h3 {  font-family: "Lucida Console", "Courier New", monospace;}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  border-width: 5px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

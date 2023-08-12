@@ -2,12 +2,23 @@
 {% load static %}
 
 {% block css_files  %}
-    <link rel="stylesheet" href="{% static 'food_app/style.css' %}">
+    <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
 {% endblock  %}
 
 {% block content %}
-{{item.item_name}}<br/>
-{{item.item_desc}}<br/>
-{{item.item_price}}
+<br/> <br/>
+<div class="row">
+    <div class="col-md-3 offset-md-2">
+        <img class='card' height='300px' width='300px' src={% static 'food_app/images/'|add:item.item_img %} alt="">
+    </div>
+    <div class="col-md-4">
+        <table>
+            <tr><th><h3>{{item.item_name}}</h3></th></tr>
+            <tr><td>{{item.item_desc}}</td></tr>
+            <tr><td>${{item.item_price}}</td></tr>
+        </table>
+    </div>
+   
+</div>
 
 {%endblock%}
