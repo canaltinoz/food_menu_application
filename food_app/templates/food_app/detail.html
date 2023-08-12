@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="{% static 'food_app/style.css' %}">
 {% endblock  %}
 
+{% block content %}
 {{item.item_name}}<br/>
 {{item.item_desc}}<br/>
 {{item.item_price}}
+
+{%endblock%}
