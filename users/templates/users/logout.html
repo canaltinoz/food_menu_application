@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files  %}
+    <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
+{% endblock  %}
+{% block page_title %} Home {%endblock%}
+
+{%block content%}
+<br/><br/>
+
+<div class="container overflow-hidden">
+ 
+    <div class="row gx-4">
+      <div class="col">
+        <h3>Ultimate BBQ Bliss Burger</h3>
+       <div class="p-8 border bg-light"><img src="{% static 'food_app/images/4.jpg'%}" style='margin-right:10px;float:left;width:170px;height:256px'>
+        <p style='text-align:justify;font-size: 15px;margin:10px;'>Introducing our "Ultimate BBQ Bliss Burger" – a taste of pure comfort and satisfaction. This masterpiece features a juicy Angus beef patty grilled to perfection, smothered in rich and smoky BBQ sauce. Topped with crispy bacon, melted cheddar cheese, and a crisp onion ring, all nestled between a fresh brioche bun. One bite, and you're transported to burger heaven, where every element combines for a mouthwatering symphony of flavors.</p></div>
+      </div>
+      <div class="col">
+        <h3>Mediterranean Sunshine Burger</h3>
+        <div class="p-8 border bg-light"><img src="{% static 'food_app/images/5.jpg'%}" style='margin-left:10px;float:right;width:200px;height:256px'><p style='text-align:justify;font-size: 15px;margin:10px;'>Presenting the "Mediterranean Sunshine Burger" – a burst of freshness in every bite. This exquisite creation showcases a tender grilled chicken breast seasoned with aromatic herbs and nestled within a fluffy whole wheat bun. Topped with a harmonious blend of creamy tzatziki sauce, vibrant roasted red peppers, crisp lettuce, and tangy feta cheese crumbles.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <br/><br/>
+{%endblock%}

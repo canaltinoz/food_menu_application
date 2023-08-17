@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files  %}
+    <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
+{% endblock  %}
+
+{% block page_title %} Profile {%endblock%}
+
+{%block content%}
+
+<br/><br/>
+<div class="row">
+  <div class="col-md-6 offset-md-4">
+
+    <table style='  border: 1px solid;'>
+
+        <tr>
+            <th style='font-family:"Times New Roman", Times, serif;font-size:25px;'>User:</th>
+            <td style='font-family:"Times New Roman", Times, serif;font-size:25px;'> {{user.username}}</td>
+        </tr>
+        <tr>
+            <th style='font-family:"Times New Roman", Times, serif;font-size:25px;'>User Joined Data:</th>
+            <td style='font-family:"Times New Roman", Times, serif;font-size:25px;'> {{user.date_joined}}</td>
+        </tr>
+        <tr>
+            <th style='font-family:"Times New Roman", Times, serif;font-size:25px;'>User Last Login:</th>
+            <td style='font-family:"Times New Roman", Times, serif;font-size:25px;'> {{user.last_login}}</td>
+        </tr>
+    </table>
+  </div>
+</div>
+  <br/><br/>
+
+
+{%endblock%}
