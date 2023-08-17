@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files  %}
+    <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
+{% endblock  %}
+{% block page_title %}Add Item{%endblock%}
+{% block content %}
+<br/><br/>
+<div class="row">
+    <div class="col-md-4 offset-md-5">
+        <form action="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>Item Name : </th>
+                    <td>{{form.item_name}}</td>
+                </tr>
+                <tr>
+                    <th>Item Description : </th>
+                    <td>{{form.item_desc}}</td>
+                </tr>
+                <tr>
+                    <th>Item Price : </th>
+                    <td>{{form.item_price}}</td>
+                </tr>
+                <tr>
+                    <th>Item Image : </th>
+                    <td>{{form.item_img}}</td>
+                </tr>
+            </table>
+            <br/>
+            <button type='submit' class='btn btn-secondary'>Submit</button>
+            </form>
+            <br/>
+    </div>
+</div>
+
+
+{%endblock%}

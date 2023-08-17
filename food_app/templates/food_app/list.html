@@ -5,29 +5,27 @@
     <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
 {% endblock  %}
 
-{% block page_title %} HomePage {%endblock%}
+{% block page_title %} Catalog {%endblock%}
 
 {%block content%}
 <br/><br/>
 
 {% for item in item %}
 <div class="row">
-    <div class="col-md-3 offset-md-2">
-        <img class='card' height='150px' width='200px' src={% static '/food_app/images/'|add:item.item_img %} alt="">
-
-    </div>
-    <div class="col-md-4">
-        <h3>{{item.item_name}}</h3>
-        <h5>{{item.item_desc}}</h3>
-        <h6>${{item.item_price}}</h3>
-
-    </div>
-    <div class="col-md-0">
-        <a href="{% url 'detail' item.id%}" class='btn btn-success'>Details</a>
-    </div>
-    <div class="col-md-0">
-        <a href="{% url 'delete' item.id%}" class='btn btn-danger'>Delete</a>
-    </div>
+            <div class="col-md-3 offset-md-2">
+                <img class='card' height='150px' width='200px' src={% static '/food_app/images/'|add:item.item_img %} alt="">
+            </div>
+            <div class="col-md-4">
+                <h3>{{item.item_name}}</h3>
+                <h5>{{item.item_desc}}</h3>
+                <h6>${{item.item_price}}</h3>
+            </div>
+            <div class="col-md-0">
+                <a href="{% url 'detail' item.id%}" class='btn btn-success'>Details</a>
+            </div>
+            <div class="col-md-0">
+                <a href="{% url 'delete' item.id%}" class='btn btn-danger'>Delete</a>
+            </div>
 </div>
 <br/><br/>
 
