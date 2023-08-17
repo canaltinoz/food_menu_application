@@ -21,8 +21,17 @@ def delete(request,item_id):
     return redirect('list')
 
 def add(request):
-    form=ItemForm(request.POST or None)
+    form=ItemForm(request.POST)
     if form.is_valid():
         form.save()
-        return redirect(list)
+        return redirect('list')
     return render(request,'food_app/add.html',{'form':form})
+
+def update(request,item_id):
+    item=Item.objects.get(pk=item_id)
+    form=ItemForm(request.POST or None,instance=item)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list')
+    return render(request,'food_app/update.html',{'form':form,'item':item})

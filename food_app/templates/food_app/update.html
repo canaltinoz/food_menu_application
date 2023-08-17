@@ -4,12 +4,12 @@
 {% block css_files  %}
     <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
 {% endblock  %}
-{% block page_title %}Add Item{%endblock%}
+{% block page_title %}Update{%endblock%}
 {% block content %}
 <br/><br/>
 <div class="row">
     <div class="col-md-4 offset-md-5">
-        <form method="POST" action="{% url 'add' %}">
+        <form method="POST" action="{% url 'update' item.id %}">
             {% csrf_token %}
             <table>
                 <tr>
@@ -35,6 +35,4 @@
             <br/>
     </div>
 </div>
-
-
 {%endblock%}
