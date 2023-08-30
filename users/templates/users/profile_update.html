@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files  %}
+    <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
+{% endblock  %}
+
+{% block page_title %} Profile {%endblock%}
+
+{%block content%}
+
+<br/><br/>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+    <table class="table table-image">
+        <td class="w-20"><img src="{{user.profile.image.url}}" class="img-fluid img-thumbnail" style='width:200px;height:200px' alt="profilepic"></td>
+    </table>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+  </div>
+  <br/><br/>
+
+{%endblock%}

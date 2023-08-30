@@ -11,9 +11,10 @@
 
 <br/><br/>
 <div class="row">
-    <div class="col-md-6 offset-md-4">
+    <div class="col-md-6 offset-md-3">
     <table class="table table-image">
         <td class="w-25"><img src="{{user.profile.image.url}}" class="img-fluid img-thumbnail" alt="profilepic"></td>
+        <div class="col-md-0">
         <tr>
             <th style='font-family:"Times New Roman", Times, serif;font-size:25px;'>User:</th>
             <td style='font-family:"Times New Roman", Times, serif;font-size:25px;'> {{user.username}}</td>
@@ -32,7 +33,12 @@
         </tr>
     </table>
   </div>
+  <div class="col-md-0">
+    <a href="{% url 'profile-update'%}" class='btn btn-success'>Update</a>
 </div>
+</div>
+
+
   <br/><br/>
 
 
