@@ -11,13 +11,16 @@
 
 <br/><br/>
 <div class="row">
-  <div class="col-md-6 offset-md-4">
-
-    <table style='  border: 1px solid;'>
-
+    <div class="col-md-6 offset-md-4">
+    <table class="table table-image">
+        <td class="w-25"><img src="{{user.profile.image.url}}" class="img-fluid img-thumbnail" alt="profilepic"></td>
         <tr>
             <th style='font-family:"Times New Roman", Times, serif;font-size:25px;'>User:</th>
             <td style='font-family:"Times New Roman", Times, serif;font-size:25px;'> {{user.username}}</td>
+        </tr>
+        <tr>
+            <th style='font-family:"Times New Roman", Times, serif;font-size:25px;'>User Location:</th>
+            <td style='font-family:"Times New Roman", Times, serif;font-size:25px;'> {{user.profile.location}}</td>
         </tr>
         <tr>
             <th style='font-family:"Times New Roman", Times, serif;font-size:25px;'>User Joined Data:</th>
