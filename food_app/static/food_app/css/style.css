@@ -8365,14 +8365,14 @@ h3 {  font-family: "Lucida Console", "Courier New", monospace;}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
-  border-width: 5px;
+  width: 100%;
+  border-width: 10px;
 }
 
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 5px;
 }
 
 tr:nth-child(even) {

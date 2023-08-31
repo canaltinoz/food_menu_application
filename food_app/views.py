@@ -27,10 +27,15 @@ def add(request):
     return render(request,'food_app/add.html',{'form':form})
 
 def update(request,item_id):
-    item=Item.objects.get(pk=item_id)
-    form=ItemForm(request.POST or None,instance=item)
 
-    if form.is_valid():
-        form.save()
-        return redirect('list')
+    
+    if request.method == 'POST':
+        item=Item.objects.get(pk=item_id)
+        form=ItemForm(request.POST or None,request.FILES,instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect('list')
+        
+    item=Item.objects.get(pk=item_id)
+    form=ItemForm(instance=item)   
     return render(request,'food_app/update.html',{'form':form,'item':item})

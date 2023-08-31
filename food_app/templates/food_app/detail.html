@@ -9,7 +9,7 @@
 <br/> <br/>
 <div class="row">
     <div class="col-md-3 offset-md-2">
-        <img class='card' height='300px' width='300px' src={% static 'food_app/images/'|add:item.item_img %} alt="">
+        <img class='card' height='300px' width='300px' src='/media/{{item.item_img}}'>
     </div>
     <div class="col-md-4">
         <table>
@@ -19,10 +19,11 @@
         </table>
     </div>
 
+    {% if user.is_authenticated %}
     <div class="col-md-0">
         <a href="{% url 'update' item.id%}" class='btn btn-info'>Update</a>
     </div>
-   
+   {%endif%}
 </div>
 <br/><br/>
 

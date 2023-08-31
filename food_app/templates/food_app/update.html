@@ -8,24 +8,24 @@
 {% block content %}
 <br/><br/>
 <div class="row">
-    <div class="col-md-4 offset-md-5">
-        <form method="POST" action="{% url 'update' item.id %}">
+    <div class="col-md-3 offset-md-4">
+        <form method="POST" action="{% url 'update' item.id %}" enctype="multipart/form-data">
             {% csrf_token %}
             <table>
                 <tr>
-                    <th>Item Name : </th>
+                    <th>Item Name:</th>
                     <td>{{form.item_name}}</td>
                 </tr>
                 <tr>
-                    <th>Item Description : </th>
+                    <th>ItemDescription:</th>
                     <td>{{form.item_desc}}</td>
                 </tr>
                 <tr>
-                    <th>Item Price : </th>
+                    <th>Item Price:</th>
                     <td>{{form.item_price}}</td>
                 </tr>
                 <tr>
-                    <th>Item Image : </th>
+                    <th>Item Image:</th>
                     <td>{{form.item_img}}</td>
                 </tr>
             </table>
