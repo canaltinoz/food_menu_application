@@ -1,4 +1,7 @@
 {% load static %}
+{% block css_files  %}
+    <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
+{% endblock  %}
 <section class="ftco-section p-0">
     <div class="container">
         <div class="row justify-content-center">
@@ -37,7 +40,10 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="{% url 'list'%}" class="nav-link">Food List</a></li>
+            {% if user.is_authenticated %}
             <li class="nav-item"><a href="{% url 'add' %}" class="nav-link">Add Food</a></li>
+            {% endif %}          
+
             <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
         </ul>

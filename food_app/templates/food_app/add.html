@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 {% load static %}
-
 {% block css_files  %}
     <link rel="stylesheet" href="{% static 'food_app/css/style.css' %}">
 {% endblock  %}
@@ -8,16 +7,16 @@
 {% block content %}
 <br/><br/>
 <div class="row">
-    <div class="col-md-3 offset-md-5">
-        <form method="POST" action="{% url 'add' %}">
+    <div class="col-md-3 offset-md-4">
+        <form method="POST" action="{% url 'add' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <table>
                 <tr>
-                    <th>Item Name : </th>
+                    <th>Item Name:</th>
                     <td>{{form.item_name}}</td>
                 </tr>
                 <tr>
-                    <th>Item Description : </th>
+                    <th>ItemDescription:</th>
                     <td>{{form.item_desc}}</td>
                 </tr>
                 <tr>

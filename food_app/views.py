@@ -20,15 +20,15 @@ def delete(request,item_id):
     return redirect('list')
 
 def add(request):
-    form=ItemForm(request.POST)
-    if form.is_valid():
-        form.save()
-        return redirect('list')
+    if request.method == 'POST':
+        form=ItemForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('list')
+    form=ItemForm()
     return render(request,'food_app/add.html',{'form':form})
 
 def update(request,item_id):
-
-    
     if request.method == 'POST':
         item=Item.objects.get(pk=item_id)
         form=ItemForm(request.POST or None,request.FILES,instance=item)
